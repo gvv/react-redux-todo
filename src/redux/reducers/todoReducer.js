@@ -1,4 +1,4 @@
-import {UPDATE_VALUE} from '../actions/actionTypes';
+import {UPDATE_VALUE, SAVE_TODO} from '../actions/actionTypes';
 
 const INITIAL_STATE = {
     value: "",
@@ -12,6 +12,24 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 value: action.payload
             }
+        case SAVE_TODO:
+            return state.value
+            ? {
+                ...state,
+                value: '',
+                todos: [...state.todos, {value: state.value, completed: false}]
+            }
+            : state;
+            // if (state.value.trim()) {
+            //     return {
+            //         ...state,
+            //         value: '',
+            //         todos: [...state.todos, {value: state.value, completed: false}]
+            //     }
+            // } else {
+            //     return state
+            // }
+            
         default:
             return state;
     }
