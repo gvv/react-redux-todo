@@ -1,13 +1,14 @@
 import React, {Fragment} from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import TodoForm from './TodoForm'
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 function App() {
   return (
     <Fragment>   {/* en lugar de un div vacio*/}
-    <Typography variant='h2' align='center' gutterBottom>
-      Lista To-Do
+    <Typography variant='h3' align='center' gutterBottom>
+      react-redux To Do
     </Typography>
     <Grid container justify='center'>
       <Grid item>
@@ -16,11 +17,7 @@ function App() {
     </Grid>
     <Grid container justify='center'>
       <Grid item md={8}>
-        {/*<TodoList
-         todos={this.state.todos} 
-         deleteTodo={this.deleteTodo} 
-         toggleCompleted={this.toggleCompleted} />
-        */}
+        <TodoList />
       </Grid>
     </Grid>
     </Fragment>
